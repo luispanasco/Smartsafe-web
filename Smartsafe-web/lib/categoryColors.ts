@@ -5,7 +5,7 @@ export const CATEGORY_COLORS: Record<string, string> = {
     'scanners-independientes': '#ef4444', // Red-500
 
     // EV Tools (Requested Green)
-    'herramientas-ev': '#1ea33c', // Darker Green (Requested)
+    'herramientas-ev': '#C40000', // Standard Red
 
     // Lift & Align
     'elevadores': '#2563eb', // Blue-600

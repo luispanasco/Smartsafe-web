@@ -56,8 +56,8 @@ export default async function CategoryPage({ params }: PageProps) {
 
     const products = await getProductsByCategory(slug);
 
-    // Theme Override: Green for EV, Default Red for others
-    const headerBgColor = slug === 'herramientas-ev' ? '#1ea33c' : '#8a1c1c';
+    // Standard Brand Background
+    const headerBgColor = '#8a1c1c';
 
     const config = getTemplateConfig(category.template || 'default');
 

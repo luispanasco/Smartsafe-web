@@ -20,7 +20,7 @@ export function ProductCard({ product }: ProductCardProps) {
     const [isHovered, setIsHovered] = useState(false);
 
     // Theme Override: Green for EV, Default Red for others
-    const accentColor = product.categorySlug === 'herramientas-ev' ? '#1ea33c' : '#db312a';
+    const accentColor = getCategoryColor(product.categorySlug);
 
     // Auto-advance carousel
     React.useEffect(() => {

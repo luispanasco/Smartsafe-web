@@ -2,7 +2,7 @@
   "categorySlug": "herramientas-ev",
   "slug": "ev-add-on-kit",
   "title": "Kit EV de diagnóstico para baterías de vehículos eléctricos",
-  "shortDescription": "Kit profesional de expansión para diagnóstico de baterías de vehículos eléctricos, diseñado para análisis avanzado de módulos, celdas y packs de batería mediante conexión directa y herramientas Launch compatibles.",
+  "shortDescription": "Kit profesional de expansión para diagnóstico de baterías de vehículos eléctricos, diseñado para análisis avanzado de módulos, celdas y packs de batería mediante conexión directa y herramientas Smartsafe compatibles.",
   "badge": "Kit EV profesional",
   "order": 11,
   "isFeatured": false,
@@ -35,7 +35,7 @@
         "Lectura de voltaje, temperatura y datos de cada celda",
         "Diagnóstico de módulos de batería y sistemas de gestión (BMS)",
         "Soporte técnico en talleres EV y centros especializados",
-        "Complemento para diagnóstico profundo con scanners Launch"
+        "Complemento para diagnóstico profundo con scanners Smartsafe"
       ]
     },
     {
@@ -48,7 +48,7 @@
         "Diagnóstico mediante puentes eléctricos cuando el acceso directo no está disponible",
         "Lectura de parámetros clave de batería: voltaje, temperatura y flujo de datos",
         "Visualización de datos a nivel de celda cuando el vehículo lo permite",
-        "Compatibilidad con mapeo de topología en scanners Launch compatibles"
+        "Compatibilidad con mapeo de topología en scanners Smartsafe compatibles"
       ]
     },
     {
@@ -69,7 +69,7 @@
         "  - Model 3",
         "  - Model X",
         "  - Model Y",
-        "Compatibilidad con scanners Launch:",
+        "Compatibilidad con scanners Smartsafe:",
         "  - Serie X-431 PAD",
         "  - X-431 PRO",
         "  - X-431 PRO3",
@@ -83,7 +83,7 @@
       "title": "Certificaciones",
       "items": [
         "Diseñado para uso profesional en diagnóstico EV",
-        "Compatible con herramientas Launch originales",
+        "Compatible con herramientas Smartsafe originales",
         "Pensado para trabajos técnicos en alto voltaje"
       ]
     },
@@ -91,7 +91,7 @@
       "type": "notes",
       "title": "Notas",
       "items": [
-        "Requiere scanner Launch compatible para su funcionamiento",
+        "Requiere scanner Smartsafe compatible para su funcionamiento",
         "No funciona como equipo independiente",
         "Debe ser utilizado por personal capacitado en sistemas EV",
         "El acceso a datos depende de la arquitectura del vehículo",
@@ -100,8 +100,8 @@
     }
   ],
   "seo": {
-    "title": "Kit EV de diagnóstico para baterías de vehículos eléctricos Launch",
-    "description": "Kit profesional de diagnóstico EV para análisis de baterías, módulos y celdas en vehículos eléctricos, compatible con scanners Launch X-431."
+    "title": "Kit EV de diagnóstico para baterías de vehículos eléctricos Smartsafe",
+    "description": "Kit profesional de diagnóstico EV para análisis de baterías, módulos y celdas en vehículos eléctricos, compatible con scanners Smartsafe X-431."
   },
   "sectionsOrder": [
     "highlights",

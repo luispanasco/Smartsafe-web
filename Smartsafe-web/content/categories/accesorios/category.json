@@ -1,7 +1,7 @@
 {
   "slug": "accesorios",
   "title": "Accesorios",
-  "shortDescription": "Accesorios y complementos originales Launch para ampliar, adaptar y potenciar el uso de scanners y equipos de diagnóstico.",
+  "shortDescription": "Accesorios y complementos originales Smartsafe para ampliar, adaptar y potenciar el uso de scanners y equipos de diagnóstico.",
   "order": 14,
   "logo": "/images/products/accesorios/logo/logo.svg",
   "isActive": true,
@@ -25,8 +25,8 @@
     "diagnostico"
   ],
   "seo": {
-    "title": "Accesorios Launch para diagnóstico automotriz",
-    "description": "Accesorios originales Launch: adaptadores, cables, interfaces y módulos para ampliar la compatibilidad y funciones de scanners de diagnóstico."
+    "title": "Accesorios Smartsafe para diagnóstico automotriz",
+    "description": "Accesorios originales Smartsafe: adaptadores, cables, interfaces y módulos para ampliar la compatibilidad y funciones de scanners de diagnóstico."
   },
   "featuredHeroProductSlug": "o2-2-scopebox",
   "categoryBanner": {
