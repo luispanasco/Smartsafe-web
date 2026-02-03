@@ -54,13 +54,13 @@ export function ProductCTA({
                             href={purchaseUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex-1 rounded-full bg-white px-8 py-3 md:py-4 text-center text-base font-bold text-[#db312a] shadow-lg hover:bg-zinc-100 transition-colors"
+                            className="flex-1 rounded-full bg-action-primary-default px-8 py-3 md:py-4 text-center text-base font-bold text-white shadow-lg hover:bg-action-primary-hover transition-colors"
                         >
                             {ctaPrimaryLabel || "Comprar en Nami"}
                         </a>
                         <button
                             onClick={() => setIsModalOpen(true)}
-                            className="flex-1 rounded-full border-2 border-zinc-200 px-8 py-3 md:py-4 text-center text-base font-bold text-zinc-900 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+                            className="flex-1 rounded-full border-2 border-ui-border px-8 py-3 md:py-4 text-center text-base font-bold text-ui-text-primary hover:bg-ui-surface transition-colors"
                         >
                             {ctaSecondaryLabel || "Consultar disponibilidad"}
                         </button>
@@ -69,7 +69,7 @@ export function ProductCTA({
                     // CASE B: No Purchase URL -> Consult Only (linking to contact page)
                     <a
                         href="/contacto"
-                        className="flex-1 rounded-full bg-white px-8 py-3 md:py-4 text-center text-base font-bold text-[#db312a] shadow-lg hover:bg-zinc-100 transition-colors"
+                        className="flex-1 rounded-full bg-action-primary-default px-8 py-3 md:py-4 text-center text-base font-bold text-white shadow-lg hover:bg-action-primary-hover transition-colors"
                     >
                         Consultar disponibilidad
                     </a>

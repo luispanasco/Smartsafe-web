@@ -27,7 +27,7 @@ export function WhyChooseUs() {
     ];
 
     return (
-        <section className="py-12 bg-gradient-to-b from-[#8a1c1c] to-[#600f0f] text-white">
+        <section className="py-12 bg-ui-bg-primary text-ui-text-primary">
             <Container>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                     {reasons.map((reason, idx) => (

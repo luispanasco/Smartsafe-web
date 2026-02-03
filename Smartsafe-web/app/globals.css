@@ -1,24 +1,93 @@
 @import "tailwindcss";
 
 :root {
-  --brand-launch-red: #db312a;
+  /* 1) BRAND COLORS */
+  --color-brand-primary: #156642;
+  --color-brand-secondary: #0f172a;
+  --color-brand-accent: #4ade80;
 
-  --background: #8a1c1c;
-  --foreground: #ffffff;
-  --section-bg: #8a1c1c;
+  /* 2) UI BASE COLORS */
+  --color-ui-bg-primary: #050505;
+  --color-ui-bg-secondary: #0f0f10;
+  --color-ui-surface: #18181b;
+  --color-ui-border: #27272a;
+
+  /* 3) TEXT COLORS */
+  --color-ui-text-primary: #e4e4e7;
+  --color-ui-text-secondary: #a1a1aa;
+  --color-ui-text-muted: #52525b;
+  --color-ui-text-dark: #09090b;
+
+  /* 4) ACTION / INTERACTION COLORS */
+  --color-action-primary-default: #166534;
+  --color-action-primary-hover: #14532d;
+  --color-action-primary-text: #ffffff;
+  --color-action-secondary-border: #3f3f46;
+  --color-action-secondary-text: #e4e4e7;
+  --color-action-disabled-bg: #27272a;
+  --color-action-disabled-text: #52525b;
+
+  /* 5) STATUS / FEEDBACK COLORS */
+  --color-status-success: #15803d;
+  --color-status-warning: #b45309;
+  --color-status-error: #991b1b;
+  --color-status-info: #0369a1;
+
+  /* 6) HERO / EMPHASIS COLORS */
+  --color-emphasis-hero-bg: #020617;
+  --color-emphasis-hero-overlay: rgba(22, 101, 52, 0.15);
+  --color-emphasis-badge-bg: #0f172a;
+  --color-emphasis-badge-text: #4ade80;
+
+  /* 7) OVERLAYS & TRANSPARENCY */
+  --color-overlay-dark-30: rgba(0, 0, 0, 0.30);
+  --color-overlay-dark-50: rgba(0, 0, 0, 0.50);
+  --color-overlay-light-05: rgba(255, 255, 255, 0.05);
+  --color-overlay-light-10: rgba(255, 255, 255, 0.10);
+
+  /* 8) SHADOW & EFFECT COLORS */
+  --color-shadow-default: rgba(0, 0, 0, 0.40);
+  --color-shadow-emphasis: rgba(0, 0, 0, 0.60);
+
+  /* Base mappings for Tailwind compat if needed (though we use specific tokens) */
+  --background: var(--color-ui-bg-primary);
+  --foreground: var(--color-ui-text-primary);
+  
+  /* Legacy/Migration helper - mapping old vars to new system to prevent breakages before full refactor */
+  --brand-launch-red: var(--color-brand-primary); 
+  --section-bg: var(--color-ui-bg-secondary);
 }
 
 /* Force dark mode to match light mode for this brand identity */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #8a1c1c;
-    --foreground: #ffffff;
+    --background: var(--color-ui-bg-primary);
+    --foreground: var(--color-ui-text-primary);
   }
 }
 
 /* Theme configuration for Tailwind v4 */
 @theme {
-  --color-launch-red: var(--brand-launch-red);
+  --color-brand-primary: var(--color-brand-primary);
+  --color-brand-secondary: var(--color-brand-secondary);
+  --color-brand-accent: var(--color-brand-accent);
+  
+  --color-ui-bg-primary: var(--color-ui-bg-primary);
+  --color-ui-bg-secondary: var(--color-ui-bg-secondary);
+  --color-ui-surface: var(--color-ui-surface);
+  --color-ui-border: var(--color-ui-border);
+  
+  --color-ui-text-primary: var(--color-ui-text-primary);
+  --color-ui-text-secondary: var(--color-ui-text-secondary);
+  --color-ui-text-muted: var(--color-ui-text-muted);
+  
+  --color-action-primary-default: var(--color-action-primary-default);
+  --color-action-primary-hover: var(--color-action-primary-hover);
+  
+  --color-status-success: var(--color-status-success);
+  --color-status-warning: var(--color-status-warning);
+  --color-status-error: var(--color-status-error);
+  --color-status-info: var(--color-status-info);
 }
 
 body {

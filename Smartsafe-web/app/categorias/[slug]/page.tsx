@@ -56,8 +56,6 @@ export default async function CategoryPage({ params }: PageProps) {
 
     const products = await getProductsByCategory(slug);
 
-    // Standard Brand Background
-    const headerBgColor = '#8a1c1c';
 
     const config = getTemplateConfig(category.template || 'default');
 
@@ -72,8 +70,7 @@ export default async function CategoryPage({ params }: PageProps) {
         <div className="min-h-screen bg-zinc-950">
             {/* Header Section */}
             <div
-                className="relative overflow-hidden pb-24 pt-20"
-                style={{ backgroundColor: headerBgColor }}
+                className="relative overflow-hidden pb-24 pt-20 bg-emphasis-hero-bg"
             >
                 <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
 

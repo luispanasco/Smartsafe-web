@@ -22,8 +22,11 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Launch Uruguay",
-  description: "Premium Technology in Uruguay",
+  title: "Smartsafe Uruguay",
+  description: "Equipamiento Industrial Premium en Uruguay",
+  icons: {
+    icon: "/images/logo.png",
+  },
 };
 
 export const viewport: Viewport = {
@@ -42,7 +45,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased flex flex-col min-h-screen bg-[#db312a] text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased flex flex-col min-h-screen bg-ui-bg-primary text-ui-text-primary`}
       >
         <Header consultationData={contactData} />
         <main className="flex-grow">

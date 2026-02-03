@@ -7,7 +7,7 @@ export default async function CatalogoPage() {
     const categories = await getAllCategories();
 
     return (
-        <div className="min-h-screen" style={{ backgroundColor: '#8a1c1c' }}>
+        <div className="min-h-screen bg-emphasis-hero-bg">
             <Container className="py-20">
                 <div className="mb-12 text-center">
                     <h1 className="text-4xl font-bold text-white mb-4 font-[family-name:var(--font-space-grotesk)]">

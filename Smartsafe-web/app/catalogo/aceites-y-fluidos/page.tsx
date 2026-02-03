@@ -39,7 +39,7 @@ export default async function AceitesCategoryPage() {
     return (
         <div className="min-h-screen bg-zinc-950">
             {/* Header Section */}
-            <div className="relative overflow-hidden bg-[#8a1c1c] pb-24 pt-20">
+            <div className="relative overflow-hidden bg-emphasis-hero-bg pb-24 pt-20">
                 <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
 
                 <Container className="relative z-10">
@@ -95,15 +95,15 @@ export default async function AceitesCategoryPage() {
                                             className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-500"
                                         />
                                         {product.badge && (
-                                            <div className="absolute top-3 left-3 bg-[#C40000] text-white text-[10px] uppercase font-bold px-2 py-1 rounded">
+                                            <div className="absolute top-3 left-3 bg-emphasis-badge-bg text-emphasis-badge-text text-[10px] uppercase font-bold px-2 py-1 rounded">
                                                 {product.badge}
                                             </div>
                                         )}
                                     </div>
                                     <div className="p-4 flex flex-col flex-grow">
-                                        <h3 className="text-lg font-bold text-white mb-1 group-hover:text-[#C40000] transition-colors">{product.title}</h3>
+                                        <h3 className="text-lg font-bold text-white mb-1 group-hover:text-brand-accent transition-colors">{product.title}</h3>
                                         <p className="text-sm text-zinc-400 line-clamp-2 mb-4 flex-grow">{product.shortDescription}</p>
-                                        <div className="mt-auto flex items-center text-[#C40000] text-sm font-bold uppercase tracking-wider">
+                                        <div className="mt-auto flex items-center text-brand-accent text-sm font-bold uppercase tracking-wider">
                                             Ver Detalles <ChevronRight size={16} className="ml-1" />
                                         </div>
                                     </div>

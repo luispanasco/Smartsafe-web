@@ -44,7 +44,7 @@ export function CategoryCard({ category }: CategoryCardProps) {
     return (
         <Link
             href={`/categorias/${category.slug}`}
-            className="group relative flex flex-col justify-between p-8 rounded-xl border border-white/10 bg-[#8a1c1c] transition-all duration-300 hover:border-white/30 hover:shadow-2xl overflow-hidden min-h-[280px]"
+            className="group relative flex flex-col justify-between p-8 rounded-xl border border-white/10 bg-ui-surface transition-all duration-300 hover:border-brand-accent/50 hover:shadow-[0_0_40px_-10px_rgba(74,222,128,0.4)] overflow-hidden min-h-[280px]"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -52,7 +52,7 @@ export function CategoryCard({ category }: CategoryCardProps) {
             {imageSrc && (
                 <div className="absolute right-0 top-0 bottom-0 w-[55%] z-0 overflow-hidden">
                     {/* Gradient Mask on the LEFT edge of the image container to blend into red */}
-                    <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#8a1c1c] via-transparent to-transparent" />
+                    <div className="absolute inset-0 z-10 bg-gradient-to-r from-ui-surface via-transparent to-transparent" />
 
                     {/* The image itself - Centered within the right sector */}
                     <div className="relative h-full w-full">
@@ -74,7 +74,7 @@ export function CategoryCard({ category }: CategoryCardProps) {
             {/* Content Container - Left Side */}
             <div className="relative z-10 flex flex-col h-full pointer-events-none max-w-[50%]">
                 <div className="mb-6">
-                    <div className="h-12 w-12 rounded-lg bg-white/10 flex items-center justify-center text-white backdrop-blur-md border border-white/10 shadow-sm transition-colors group-hover:bg-white/20">
+                    <div className="h-12 w-12 rounded-lg bg-white/10 flex items-center justify-center text-white backdrop-blur-md border border-brand-accent/30 shadow-[0_0_20px_-5px_rgba(74,222,128,0.5)] transition-colors group-hover:bg-white/20">
                         {category.logo ? (
                             <Image
                                 src={category.logo}

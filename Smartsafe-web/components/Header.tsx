@@ -21,14 +21,14 @@ export function Header({ consultationData }: { consultationData: ConsultationDat
 
     return (
         <>
-            <header className="sticky top-0 z-50 w-full bg-[#111111] text-white shadow-md font-[family-name:var(--font-space-grotesk)]">
+            <header className="sticky top-0 z-50 w-full bg-ui-bg-primary text-ui-text-primary shadow-md font-[family-name:var(--font-space-grotesk)] border-b border-white/5">
                 <Container>
                     <div className="flex h-14 items-center justify-between">
                         {/* Logo / Brand */}
                         <div className="flex-shrink-0">
                             <Link href="/" className="flex items-baseline gap-1 text-xl font-bold tracking-tight transition-colors uppercase">
-                                <span className="text-white">LAUNCH</span>
-                                <span className="text-[#C40000] font-normal">Uruguay</span>
+                                <span className="text-white">SMARTSAFE</span>
+                                <span className="text-brand-accent font-normal">Uruguay</span>
                             </Link>
                         </div>
 
@@ -38,7 +38,7 @@ export function Header({ consultationData }: { consultationData: ConsultationDat
                                 <Link
                                     key={item.name}
                                     href={item.href}
-                                    className="text-sm font-medium text-zinc-300 hover:text-[#C40000] transition-all uppercase tracking-wide"
+                                    className="text-sm font-medium text-ui-text-secondary hover:text-brand-accent transition-all uppercase tracking-wide"
                                 >
                                     {item.name}
                                 </Link>
@@ -49,14 +49,14 @@ export function Header({ consultationData }: { consultationData: ConsultationDat
                         <div className="hidden md:flex md:items-center md:gap-x-4">
                             <a
                                 href="https://wa.me/59898155763"
-                                className="text-zinc-300 hover:text-[#25D366] transition-colors"
+                                className="text-ui-text-secondary hover:text-[#25D366] transition-colors"
                                 aria-label="WhatsApp"
                             >
                                 <MessageCircle className="h-5 w-5" />
                             </a>
                             <button
                                 onClick={() => setIsConsultationModalOpen(true)}
-                                className="rounded-full border border-[#C40000] bg-transparent px-5 py-1.5 text-xs font-bold text-[#C40000] hover:bg-[#C40000] hover:text-white transition-all uppercase tracking-wider"
+                                className="rounded-full border border-brand-primary bg-transparent px-5 py-1.5 text-xs font-bold text-brand-accent hover:bg-brand-primary hover:text-white transition-all uppercase tracking-wider"
                             >
                                 Consultas
                             </button>
@@ -66,7 +66,7 @@ export function Header({ consultationData }: { consultationData: ConsultationDat
                         <div className="flex md:hidden">
                             <button
                                 type="button"
-                                className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-zinc-100 hover:text-[#C40000]"
+                                className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-zinc-100 hover:text-brand-accent"
                                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                             >
                                 <span className="sr-only">Open main menu</span>
@@ -82,14 +82,14 @@ export function Header({ consultationData }: { consultationData: ConsultationDat
 
                 {/* Mobile Menu */}
                 {isMobileMenuOpen && (
-                    <div className="md:hidden border-t border-[#C40000] bg-[#111111] text-white">
+                    <div className="md:hidden border-t border-brand-primary bg-ui-bg-primary text-white">
                         <Container className="py-4 space-y-4">
                             <div className="flex flex-col space-y-3">
                                 {navigation.map((item) => (
                                     <Link
                                         key={item.name}
                                         href={item.href}
-                                        className="text-base font-medium text-zinc-300 hover:text-[#C40000] uppercase tracking-wide"
+                                        className="text-base font-medium text-ui-text-secondary hover:text-brand-accent uppercase tracking-wide"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                     >
                                         {item.name}
@@ -99,7 +99,7 @@ export function Header({ consultationData }: { consultationData: ConsultationDat
                             <div className="border-t border-zinc-800 pt-4 flex flex-col gap-3">
                                 <a
                                     href="https://wa.me/59898155763"
-                                    className="flex items-center gap-2 text-zinc-300 hover:text-[#25D366] transition-colors"
+                                    className="flex items-center gap-2 text-ui-text-secondary hover:text-[#25D366] transition-colors"
                                 >
                                     <MessageCircle className="h-5 w-5" />
                                     <span>WhatsApp</span>
@@ -109,7 +109,7 @@ export function Header({ consultationData }: { consultationData: ConsultationDat
                                         setIsMobileMenuOpen(false);
                                         setIsConsultationModalOpen(true);
                                     }}
-                                    className="w-full rounded-full border border-[#C40000] bg-transparent px-4 py-2 text-sm font-bold text-[#C40000] hover:bg-[#C40000] hover:text-white transition-all uppercase tracking-wider"
+                                    className="w-full rounded-full border border-brand-primary bg-transparent px-4 py-2 text-sm font-bold text-brand-accent hover:bg-brand-primary hover:text-white transition-all uppercase tracking-wider"
                                 >
                                     Consultas
                                 </button>

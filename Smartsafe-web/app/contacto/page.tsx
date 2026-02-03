@@ -28,13 +28,13 @@ export default async function ContactPage() {
     return (
         <div className="min-h-screen bg-zinc-950 font-sans">
             {/* Header Section */}
-            <div className="relative overflow-hidden bg-[#8a1c1c] py-24 md:py-32">
+            <div className="relative overflow-hidden bg-emphasis-hero-bg py-24 md:py-32">
                 <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
                 <Container className="relative z-10 text-center">
-                    <h1 className="mb-6 text-5xl md:text-6xl font-bold text-white font-[family-name:var(--font-space-grotesk)]">
+                    <h1 className="mb-6 text-5xl md:text-6xl font-bold text-ui-text-primary font-[family-name:var(--font-space-grotesk)]">
                         Contacto
                     </h1>
-                    <p className="mx-auto max-w-2xl text-lg md:text-xl text-white/80 leading-relaxed">
+                    <p className="mx-auto max-w-2xl text-lg md:text-xl text-ui-text-secondary leading-relaxed">
                         {consultation.description}
                     </p>
                 </Container>
@@ -46,10 +46,10 @@ export default async function ContactPage() {
                     {consultation.locations.map((location) => (
                         <div
                             key={location.slug}
-                            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-all hover:bg-white/[0.07]"
+                            className="group relative overflow-hidden rounded-3xl border border-ui-border bg-ui-surface p-8 transition-all hover:bg-ui-bg-secondary"
                         >
                             <div className="mb-8 flex items-center gap-4">
-                                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#8a1c1c] text-white shadow-lg shadow-red-900/20">
+                                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-primary text-white shadow-lg shadow-black/20">
                                     <MapPin size={24} />
                                 </div>
                                 <h2 className="text-2xl font-bold text-white font-[family-name:var(--font-space-grotesk)]">

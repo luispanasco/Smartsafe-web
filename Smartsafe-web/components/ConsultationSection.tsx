@@ -27,7 +27,7 @@ export function ConsultationSection({ consultation }: ConsultationSectionProps) 
                         <div key={location.slug} className="bg-black/20 border border-white/10 rounded-2xl overflow-hidden p-6 flex flex-col h-full">
                             {/* Header */}
                             <div className="flex items-center gap-3 mb-6">
-                                <div className="w-10 h-10 rounded-full bg-[#8a1c1c]/20 flex items-center justify-center text-[#8a1c1c]">
+                                <div className="w-10 h-10 rounded-full bg-brand-primary/20 flex items-center justify-center text-brand-primary">
                                     <MapPin size={20} />
                                 </div>
                                 <h3 className="text-xl font-bold text-white">{location.name}</h3>

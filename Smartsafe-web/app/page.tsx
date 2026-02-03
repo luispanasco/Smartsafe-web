@@ -24,7 +24,7 @@ export default async function Home() {
       <CategoryGrid categories={categories} />
 
       {/* 3. Featured Products Section */}
-      <section className="py-12 bg-[#8a1c1c] text-white">
+      <section className="py-12 bg-ui-bg-secondary text-ui-text-primary">
         <Container>
           <div className="flex items-center justify-between mb-12">
             <div>

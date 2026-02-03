@@ -12,7 +12,7 @@ interface CategoryGridProps {
 
 export function CategoryGrid({ categories }: CategoryGridProps) {
     return (
-        <section className="py-12 bg-[#8a1c1c]">
+        <section className="py-12 bg-ui-bg-primary">
             <Container>
                 <div className="text-center max-w-2xl mx-auto mb-16">
                     <h2 className="text-3xl font-bold text-white mb-4 font-[family-name:var(--font-space-grotesk)]">

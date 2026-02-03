@@ -4,8 +4,8 @@
   "title": "EB240 – Ecualizador de celdas para baterías de vehículos eléctricos",
   "shortDescription": "Equipo profesional de ecualización, carga y descarga de celdas de baterías de litio, diseñado para mantenimiento, corrección de desbalances y extensión de la vida útil de baterías en vehículos eléctricos.",
   "badge": "Equipo EV profesional",
-  "order": 6,
-  "isFeatured": false,
+  "order": 1,
+  "isFeatured": true,
   "isActive": true,
   "filters": {
     "tipo-de-equipo": "ecualizador-de-baterias",

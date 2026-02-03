@@ -56,7 +56,7 @@ export function Footer() {
 
 
     return (
-        <footer className="bg-[#111111] text-zinc-400 border-t border-white/5 font-[family-name:var(--font-space-grotesk)] relative">
+        <footer className="bg-ui-bg-primary text-ui-text-muted border-t border-white/5 font-[family-name:var(--font-space-grotesk)] relative">
             <Container className="py-12 md:py-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
                     {/* 1. Brand */}
@@ -64,18 +64,18 @@ export function Footer() {
                         <Link href="/" className="inline-block opacity-90 hover:opacity-100 transition-opacity">
                             <Image
                                 src="/images/logo.png"
-                                alt="Launch Uruguay"
+                                alt="Smartsafe Uruguay"
                                 width={280}
                                 height={70}
                                 className="h-20 w-auto object-contain"
                             />
                         </Link>
-                        <p className="text-sm leading-relaxed text-zinc-400 max-w-xs">
-                            El estándar profesional en diagnóstico automotriz. Tecnología Launch con soporte local en Uruguay.
+                        <p className="text-sm leading-relaxed text-ui-text-muted max-w-xs">
+                            Soluciones profesionales para el equipamiento integral del taller
                         </p>
                         <div className="pt-2">
-                            <div className="h-px w-12 bg-[#8a1c1c]/50 mb-4" />
-                            <p className="text-xs text-zinc-500 font-medium">
+                            <div className="h-px w-12 bg-brand-primary/50 mb-4" />
+                            <p className="text-xs text-ui-text-muted font-medium">
                                 Distribución y soporte oficial por Nami Uruguay.
                             </p>
                         </div>
@@ -83,15 +83,15 @@ export function Footer() {
 
                     {/* 2. Navigation */}
                     <div>
-                        <h3 className="text-sm font-bold text-white mb-6 uppercase tracking-wider">Navegación</h3>
+                        <h3 className="text-sm font-bold text-ui-text-primary mb-6 uppercase tracking-wider">Navegación</h3>
                         <ul className="space-y-3 text-sm">
                             <li>
-                                <Link href="/#hero" className="hover:text-[#C40000] transition-colors block py-0.5">
+                                <Link href="/#hero" className="hover:text-brand-accent transition-colors block py-0.5">
                                     Inicio
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/catalogo" className="hover:text-[#C40000] transition-colors block py-0.5">
+                                <Link href="/catalogo" className="hover:text-brand-accent transition-colors block py-0.5">
                                     Catálogo
                                 </Link>
                             </li>
@@ -100,18 +100,18 @@ export function Footer() {
 
                     {/* 3. Contact */}
                     <div>
-                        <h3 className="text-sm font-bold text-white mb-6 uppercase tracking-wider">Contacto</h3>
+                        <h3 className="text-sm font-bold text-ui-text-primary mb-6 uppercase tracking-wider">Contacto</h3>
                         <ul className="space-y-4 text-sm">
                             <li className="flex items-center gap-3">
-                                <span className="flex-shrink-0 text-[#C40000]"><Phone size={16} /></span>
+                                <span className="flex-shrink-0 text-brand-accent"><Phone size={16} /></span>
                                 <span className="hover:text-white transition-colors cursor-default">Facundo: 092 748 865</span>
                             </li>
                             <li className="flex items-center gap-3">
-                                <span className="flex-shrink-0 text-[#C40000]"><Phone size={16} /></span>
+                                <span className="flex-shrink-0 text-brand-accent"><Phone size={16} /></span>
                                 <span className="hover:text-white transition-colors cursor-default">Luis P.: 098 155 763</span>
                             </li>
                             <li className="flex items-center gap-3">
-                                <span className="flex-shrink-0 text-[#C40000]"><Phone size={16} /></span>
+                                <span className="flex-shrink-0 text-brand-accent"><Phone size={16} /></span>
                                 <span className="hover:text-white transition-colors cursor-default">Sucursal Bulevar: 098 829 026</span>
                             </li>
                         </ul>
@@ -120,31 +120,48 @@ export function Footer() {
                     {/* 4. Socials & Partner */}
                     <div className="flex flex-col h-full gap-8">
                         <div>
-                            <h3 className="text-sm font-bold text-white mb-6 uppercase tracking-wider">
+                            <h3 className="text-sm font-bold text-ui-text-primary mb-6 uppercase tracking-wider">
                                 {launchData.social.title}
                             </h3>
 
                             {/* Social Icons */}
                             <div className="flex gap-5 items-center">
-                                {launchData.social.links.map((social) => (
-                                    <a
-                                        key={social.slug}
-                                        href={social.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        title={social.label}
-                                        aria-label={social.label}
-                                        className="text-zinc-500 hover:text-[#C40000] hover:scale-110 transition-all duration-300"
-                                    >
-                                        {iconMap[social.slug] || <ExternalLink size={24} strokeWidth={1.5} />}
-                                    </a>
-                                ))}
+                                {launchData.social.links.map((social) => {
+                                    const Icon = iconMap[social.slug] || <ExternalLink size={24} strokeWidth={1.5} />;
+
+                                    if (!social.url) {
+                                        return (
+                                            <span
+                                                key={social.slug}
+                                                title={social.label}
+                                                aria-label={social.label}
+                                                className="text-zinc-500 cursor-default"
+                                            >
+                                                {Icon}
+                                            </span>
+                                        );
+                                    }
+
+                                    return (
+                                        <a
+                                            key={social.slug}
+                                            href={social.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            title={social.label}
+                                            aria-label={social.label}
+                                            className="text-zinc-500 hover:text-brand-accent hover:scale-110 transition-all duration-300"
+                                        >
+                                            {Icon}
+                                        </a>
+                                    );
+                                })}
                             </div>
                         </div>
 
                         {/* Partner Block / Direct Purchase */}
                         <div className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/5 mt-auto hover:border-white/10 transition-colors">
-                            <h4 className="text-sm font-bold text-white mb-2 uppercase tracking-wide">Compra directa</h4>
+                            <h4 className="text-sm font-bold text-ui-text-primary mb-2 uppercase tracking-wide">Compra directa</h4>
                             <p className="text-xs text-zinc-400 mb-5 leading-relaxed">
                                 Disponibilidad inmediata y compra online a través de Nami Uruguay, canal oficial.
                             </p>
@@ -152,7 +169,7 @@ export function Footer() {
                                 href="https://www.herramientas.nami.com.uy"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center justify-center gap-2 w-full rounded-lg bg-[#C40000] px-4 py-3 text-xs font-bold text-white hover:bg-[#a00000] transition-all uppercase tracking-wider shadow-lg shadow-red-900/20 active:scale-[0.98]"
+                                className="flex items-center justify-center gap-2 w-full rounded-lg bg-action-primary-default px-4 py-3 text-xs font-bold text-white hover:bg-action-primary-hover transition-all uppercase tracking-wider shadow-lg shadow-black/20 active:scale-[0.98]"
                             >
                                 <span>Comprar en Nami Uruguay</span>
                                 <ExternalLink className="h-3 w-3 opacity-80" />
@@ -164,7 +181,7 @@ export function Footer() {
                 {/* Footer Bottom */}
                 <div className="mt-20 border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
                     <p className="text-xs text-zinc-600">
-                        &copy; {new Date().getFullYear()} Launch Uruguay. Todos los derechos reservados.
+                        &copy; {new Date().getFullYear()} SmartSafe Uruguay. Todos los derechos reservados.
                     </p>
                     <p className="text-xs text-zinc-600/60 flex items-center gap-2">
                         <span>Powered by Nami</span>

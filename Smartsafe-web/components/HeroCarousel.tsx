@@ -81,13 +81,13 @@ export function HeroCarousel({ products = [], images = [], alt = "Hero Image", v
     return (
         <div
             id="hero"
-            className={`relative overflow-hidden bg-black group ${variant === 'default' ? 'h-[50vh] min-h-[400px] lg:h-[85vh] lg:min-h-[600px]' : 'h-full'}`}
+            className={`relative overflow-hidden bg-ui-bg-primary group ${variant === 'default' ? 'h-[50vh] min-h-[400px] lg:h-[85vh] lg:min-h-[600px]' : 'h-full'}`}
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
         >
             {/* Background Effects (Static) */}
-            <div className="absolute inset-0 bg-[#8a1c1c]/10 pointer-events-none" />
+            <div className="absolute inset-0 bg-brand-primary/10 pointer-events-none" />
             <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-20 pointer-events-none" />
 
             {/* Slides Container */}
@@ -157,19 +157,19 @@ export function HeroCarousel({ products = [], images = [], alt = "Hero Image", v
                                                 </span>
                                             )}
 
-                                            <h2 className="text-2xl xs:text-3xl lg:text-6xl font-bold text-white leading-tight font-[family-name:var(--font-space-grotesk)] max-w-[20ch] lg:max-w-none mx-auto lg:mx-0 mt-2 lg:mt-0">
+                                            <h2 className="text-2xl xs:text-3xl lg:text-6xl font-bold text-ui-text-primary leading-tight font-[family-name:var(--font-space-grotesk)] max-w-[20ch] lg:max-w-none mx-auto lg:mx-0 mt-2 lg:mt-0">
                                                 {product.title}
                                             </h2>
                                         </div>
 
-                                        <p className="hidden lg:block text-lg lg:text-xl text-zinc-300 max-w-lg leading-relaxed line-clamp-3">
+                                        <p className="hidden lg:block text-lg lg:text-xl text-ui-text-secondary max-w-lg leading-relaxed line-clamp-3">
                                             {product.shortDescription}
                                         </p>
 
                                         <div className="hidden lg:flex flex-wrap gap-4 pt-2">
                                             <Link
                                                 href={`/categorias/${product.categorySlug}/${product.slug}`}
-                                                className="bg-[#C40000] hover:bg-[#a00000] text-white px-8 py-3 rounded-full font-bold transition-all shadow-lg shadow-red-900/20 flex items-center gap-2 group/btn"
+                                                className="bg-brand-primary hover:bg-brand-accent text-white px-8 py-3 rounded-full font-bold transition-all shadow-lg shadow-black/20 flex items-center gap-2 group/btn"
                                             >
                                                 Ver Detalles
                                                 <ChevronRight className="group-hover/btn:translate-x-1 transition-transform" />
@@ -187,7 +187,7 @@ export function HeroCarousel({ products = [], images = [], alt = "Hero Image", v
                                 {/* Image Column */}
                                 <div className={`relative w-full flex items-center justify-center order-1 lg:order-2 ${variant === 'compact' ? 'p-0 h-full' : 'p-0 lg:p-8 h-[35vh] lg:h-full'}`}>
                                     {/* Blob Effect */}
-                                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] lg:w-[500px] h-[250px] lg:h-[500px] bg-[#C40000] rounded-full blur-[80px] lg:blur-[120px] opacity-20 animate-pulse" />
+                                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] lg:w-[500px] h-[250px] lg:h-[500px] bg-brand-primary rounded-full blur-[80px] lg:blur-[120px] opacity-20 animate-pulse" />
 
                                     {/* Link wrapper for mobile (or desktop if user wants everything clickable, but req says mobile) */}
                                     {/* Actually, user said "when you click on the image it sends you to the product page" */}
@@ -210,14 +210,14 @@ export function HeroCarousel({ products = [], images = [], alt = "Hero Image", v
                 <div className="hidden lg:block">
                     <button
                         onClick={prevSlide}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full bg-black/20 hover:bg-[#C40000] text-white backdrop-blur-sm border border-white/10 transition-all hover:scale-110 active:scale-95 group"
+                        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full bg-black/20 hover:bg-brand-primary text-white backdrop-blur-sm border border-white/10 transition-all hover:scale-110 active:scale-95 group"
                         aria-label="Previous slide"
                     >
                         <ChevronLeft className="w-6 h-6 group-hover:-translate-x-0.5 transition-transform" />
                     </button>
                     <button
                         onClick={nextSlide}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full bg-black/20 hover:bg-[#C40000] text-white backdrop-blur-sm border border-white/10 transition-all hover:scale-110 active:scale-95 group"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full bg-black/20 hover:bg-brand-primary text-white backdrop-blur-sm border border-white/10 transition-all hover:scale-110 active:scale-95 group"
                         aria-label="Next slide"
                     >
                         <ChevronRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform" />
@@ -232,7 +232,7 @@ export function HeroCarousel({ products = [], images = [], alt = "Hero Image", v
                         <button
                             key={idx}
                             onClick={() => setCurrent(idx)}
-                            className={`h-1.5 rounded-full transition-all duration-300 ${idx === current ? "w-6 bg-[#C40000]" : "w-1.5 bg-white/30 hover:bg-white/50"
+                            className={`h-1.5 rounded-full transition-all duration-300 ${idx === current ? "w-6 bg-brand-accent" : "w-1.5 bg-white/30 hover:bg-white/50"
                                 }`}
                             aria-label={`Go to slide ${idx + 1}`}
                         />

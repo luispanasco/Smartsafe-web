@@ -48,7 +48,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
     return (
         <div
-            className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition-all duration-300"
+            className="group relative flex flex-col overflow-hidden rounded-2xl border border-ui-border bg-ui-surface transition-all duration-300"
             style={{
                 // Use CSS variables or inline styles for dynamic hover colors
                 // Note: Tailwind arbitrary values with dynamic strings don't work well, so we use style for the specific color interactions
