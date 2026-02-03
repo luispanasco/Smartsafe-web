@@ -25,11 +25,34 @@ export function Header({ consultationData }: { consultationData: ConsultationDat
                 <Container>
                     <div className="flex h-14 items-center justify-between">
                         {/* Logo / Brand */}
-                        <div className="flex-shrink-0">
-                            <Link href="/" className="flex items-baseline gap-1 text-xl font-bold tracking-tight transition-colors uppercase">
+                        {/* Logo / Brand Switch */}
+                        <div className="flex-shrink-0 flex items-center gap-4">
+                            {/* 1. ACTIVE BRAND (SmartSafe) - Static/Non-clickable */}
+                            <div className="flex items-baseline gap-1 text-xl font-bold tracking-tight uppercase select-none cursor-default">
                                 <span className="text-white">SMARTSAFE</span>
-                                <span className="text-brand-accent font-normal">Uruguay</span>
-                            </Link>
+                                <span className="text-brand-primary font-normal">Uruguay</span>
+                            </div>
+
+                            {/* 2. SEPARATOR - Pipe | */}
+                            <span className="hidden sm:block text-gray-500 text-xl font-light select-none">|</span>
+
+                            {/* 3. INACTIVE BRAND LINK (Launch) - Clickable */}
+                            <a
+                                href="https://www.launchuruguay.com.uy"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group hidden sm:flex items-baseline gap-1 text-xl font-bold tracking-tight uppercase transition-colors duration-300"
+                            >
+                                {/* "LAUNCH" turns WHITE on hover */}
+                                <span className="text-gray-500 group-hover:text-white transition-colors">
+                                    LAUNCH
+                                </span>
+
+                                {/* "Uruguay" turns LAUNCH RED on hover */}
+                                <span className="text-gray-500 group-hover:text-[var(--color-brand-launch)] font-normal transition-colors">
+                                    Uruguay
+                                </span>
+                            </a>
                         </div>
 
                         {/* Desktop Navigation */}

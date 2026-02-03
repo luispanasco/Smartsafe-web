@@ -8,6 +8,8 @@
   /* Slate-900 for heavy contrast */
   --color-brand-accent: #4ade80;
   /* Brighter green for highlights restricted to small areas */
+  --color-brand-launch: #df1d30;
+
 
   /* 2) UI BASE COLORS */
   --color-ui-bg-primary: #050505;
