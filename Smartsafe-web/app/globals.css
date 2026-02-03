@@ -3,24 +3,39 @@
 :root {
   /* 1) BRAND COLORS */
   --color-brand-primary: #156642;
+  /* Deep modern green, professional */
   --color-brand-secondary: #0f172a;
+  /* Slate-900 for heavy contrast */
   --color-brand-accent: #4ade80;
+  /* Brighter green for highlights restricted to small areas */
 
   /* 2) UI BASE COLORS */
   --color-ui-bg-primary: #050505;
+  /* Near black */
   --color-ui-bg-secondary: #0f0f10;
+  /* Slightly lighter bg */
   --color-ui-surface: #18181b;
+  /* Zinc-900 surface */
   --color-ui-border: #27272a;
+  /* Zinc-800 border */
 
   /* 3) TEXT COLORS */
   --color-ui-text-primary: #e4e4e7;
+  /* Zinc-200 */
   --color-ui-text-secondary: #a1a1aa;
+  /* Zinc-400 */
   --color-ui-text-muted: #52525b;
+  /* Zinc-600 */
   --color-ui-text-dark: #09090b;
+  /* Zinc-950 for light backgrounds */
 
   /* 4) ACTION / INTERACTION COLORS */
-  --color-action-primary-default: #166534;
-  --color-action-primary-hover: #14532d;
+  --color-action-primary-default: #15803d;
+  /* Green-700 */
+  --color-action-primary-hover: #166534;
+  /* Green-800 */
+  --color-action-primary-active: #14532d;
+  /* Green-900 */
   --color-action-primary-text: #ffffff;
   --color-action-secondary-border: #3f3f46;
   --color-action-secondary-text: #e4e4e7;
@@ -35,7 +50,8 @@
 
   /* 6) HERO / EMPHASIS COLORS */
   --color-emphasis-hero-bg: #020617;
-  --color-emphasis-hero-overlay: rgba(22, 101, 52, 0.15);
+  --color-emphasis-hero-overlay: rgba(21, 128, 61, 0.15);
+  /* Green tint */
   --color-emphasis-badge-bg: #0f172a;
   --color-emphasis-badge-text: #4ade80;
 
@@ -49,12 +65,12 @@
   --color-shadow-default: rgba(0, 0, 0, 0.40);
   --color-shadow-emphasis: rgba(0, 0, 0, 0.60);
 
-  /* Base mappings for Tailwind compat if needed (though we use specific tokens) */
+  /* Tailwind Compat */
   --background: var(--color-ui-bg-primary);
   --foreground: var(--color-ui-text-primary);
-  
+
   /* Legacy/Migration helper - mapping old vars to new system to prevent breakages before full refactor */
-  --brand-launch-red: var(--color-brand-primary); 
+  --brand-launch-red: var(--color-brand-primary);
   --section-bg: var(--color-ui-bg-secondary);
 }
 
@@ -71,19 +87,22 @@
   --color-brand-primary: var(--color-brand-primary);
   --color-brand-secondary: var(--color-brand-secondary);
   --color-brand-accent: var(--color-brand-accent);
-  
+
   --color-ui-bg-primary: var(--color-ui-bg-primary);
   --color-ui-bg-secondary: var(--color-ui-bg-secondary);
   --color-ui-surface: var(--color-ui-surface);
   --color-ui-border: var(--color-ui-border);
-  
+
   --color-ui-text-primary: var(--color-ui-text-primary);
   --color-ui-text-secondary: var(--color-ui-text-secondary);
   --color-ui-text-muted: var(--color-ui-text-muted);
-  
+  --color-ui-text-dark: var(--color-ui-text-dark);
+
   --color-action-primary-default: var(--color-action-primary-default);
   --color-action-primary-hover: var(--color-action-primary-hover);
-  
+  --color-action-primary-active: var(--color-action-primary-active);
+  --color-action-primary-text: var(--color-action-primary-text);
+
   --color-status-success: var(--color-status-success);
   --color-status-warning: var(--color-status-warning);
   --color-status-error: var(--color-status-error);

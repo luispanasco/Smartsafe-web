@@ -105,7 +105,9 @@ export function HeroCarousel({ products = [], images = [], alt = "Hero Image", v
 
                 // Mobile Link Wrapper Logic
                 const content = (
-                    <div className={`relative w-full transition-all duration-1000 ${variant === 'default' ? 'aspect-square max-w-[280px] xs:max-w-[320px] lg:max-w-[550px]' : 'h-full flex items-center justify-center'} ${isActive ? "scale-100 opacity-100 translate-y-0" : "scale-90 opacity-0 translate-y-8"
+                    <div className={`relative w-full transition-all duration-1000 ${variant === 'default'
+                        ? (shouldScale ? 'aspect-[16/9] max-w-full lg:max-w-[650px]' : 'aspect-square max-w-[280px] xs:max-w-[320px] lg:max-w-[550px]')
+                        : 'h-full flex items-center justify-center'} ${isActive ? "scale-100 opacity-100 translate-y-0" : "scale-90 opacity-0 translate-y-8"
                         }`}>
                         <Image
                             src={imageSrc || "/images/placeholder.png"}
@@ -114,11 +116,6 @@ export function HeroCarousel({ products = [], images = [], alt = "Hero Image", v
                             className={`object-contain drop-shadow-2xl ${variant === 'compact' ? 'p-0 object-center' : 'p-0 lg:p-4'}`}
                             priority={index === 0}
                             onLoadingComplete={(e) => handleImageLoad(index, e)}
-                            style={{
-                                transform: shouldScale ? 'scale(1.5)' : 'none',
-                                transformOrigin: 'center center',
-                                transition: 'transform 0.5s ease-out'
-                            }}
                         />
                     </div>
                 );
@@ -162,8 +159,12 @@ export function HeroCarousel({ products = [], images = [], alt = "Hero Image", v
                                             </h2>
                                         </div>
 
-                                        <p className="hidden lg:block text-lg lg:text-xl text-ui-text-secondary max-w-lg leading-relaxed line-clamp-3">
-                                            {product.shortDescription}
+                                        <p className="hidden lg:block text-lg lg:text-xl text-ui-text-secondary max-w-lg leading-relaxed">
+                                            {product.shortDescription
+                                                ? (product.shortDescription.split(" ").length > 20
+                                                    ? product.shortDescription.split(" ").slice(0, 20).join(" ") + "..."
+                                                    : product.shortDescription)
+                                                : ""}
                                         </p>
 
                                         <div className="hidden lg:flex flex-wrap gap-4 pt-2">
