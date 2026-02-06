@@ -44,6 +44,9 @@ function normalizeCategory(raw: any, slug: string): Category {
         enableHoverPreview: rawCategory.enableHoverPreview ?? true, // Default true per spec
         previews: rawCategory.previews, // runtime
 
+        // Color
+        color: rawCategory.color,
+
         // SEO
         seo: {
             title: rawCategory.seo?.title || rawCategory.title || "Launch Uruguay",
@@ -62,7 +65,7 @@ function normalizeCategory(raw: any, slug: string): Category {
     };
 }
 
-function normalizeProduct(raw: any, categorySlug: string, productSlug: string, globalConsultation?: ProductConsultation | null): Product {
+function normalizeProduct(raw: any, categorySlug: string, productSlug: string, globalConsultation?: ProductConsultation | null, categoryColor?: string): Product {
     const rawProduct = raw as Partial<Product>;
 
     // STRICT VALIDATION
@@ -108,6 +111,9 @@ function normalizeProduct(raw: any, categorySlug: string, productSlug: string, g
         // IDs
         slug: productSlug,
         categorySlug,
+
+        // Theme
+        categoryColor,
 
         // Basic Info
         title: rawProduct.title || "Untitled Product",
@@ -175,6 +181,12 @@ export async function getAllCategories(): Promise<Category[]> {
                 // NORMALIZE
                 const category = normalizeCategory(raw, slug);
 
+                // Get products with category color context
+                // Note: We need to pass category.color to getProductsByCategory if we want it there, 
+                // but getProductsByCategory fetches products independently. 
+                // However, we are in getAllCategories. 
+                // Let's check how getProductsByCategory is used.
+
                 if (category.isActive) {
                     // 1. Resolve Category Cover Image (Featured Hero Product Index 1)
                     if (category.featuredHeroProductSlug) {
@@ -191,7 +203,7 @@ export async function getAllCategories(): Promise<Category[]> {
 
                     // Fallback using first product if not set
                     if (!category.image) {
-                        const products = await getProductsByCategory(slug, globalConsultation);
+                        const products = await getProductsByCategory(slug, globalConsultation, category.color);
                         if (products.length > 0) {
                             // assume sorted by order
                             const first = products[0]; // sorting happens in getProductsByCategory return, but here we invoke it to get list. We should verify order.
@@ -226,7 +238,7 @@ export async function getAllCategories(): Promise<Category[]> {
 
                     if (category.enableHoverPreview || bannerMode === "auto-from-products") {
                         try {
-                            const products = await getProductsByCategory(slug, globalConsultation);
+                            const products = await getProductsByCategory(slug, globalConsultation, category.color);
 
                             // Ensure sorted by priority (Featured > Order)
                             const sorted = products.sort((a, b) => {
@@ -289,7 +301,7 @@ export async function getCategoryBySlug(slug: string): Promise<Category | null> 
         if (category.enableHoverPreview) {
             try {
                 const globalConsultation = await getGlobalConsultation();
-                const products = await getProductsByCategory(slug, globalConsultation);
+                const products = await getProductsByCategory(slug, globalConsultation, category.color);
                 const sorted = products.sort((a, b) => {
                     if (a.isFeatured && !b.isFeatured) return -1;
                     if (!a.isFeatured && b.isFeatured) return 1;
@@ -311,7 +323,7 @@ export async function getCategoryBySlug(slug: string): Promise<Category | null> 
     }
 }
 
-export async function getProductsByCategory(categorySlug: string, providedGlobalConsultation?: ProductConsultation | null): Promise<Product[]> {
+export async function getProductsByCategory(categorySlug: string, providedGlobalConsultation?: ProductConsultation | null, categoryColor?: string): Promise<Product[]> {
     const productsDir = path.join(CONTENT_DIR, 'categories', categorySlug, 'products');
 
     if (!fs.existsSync(productsDir)) {
@@ -343,7 +355,7 @@ export async function getProductsByCategory(categorySlug: string, providedGlobal
 
                     // NORMALIZE
                     // Now handles dynamic image resolution
-                    const product = normalizeProduct(raw, categorySlug, item, globalConsultation);
+                    const product = normalizeProduct(raw, categorySlug, item, globalConsultation, categoryColor);
 
                     if (product.isActive) {
                         products.push(product);
@@ -370,7 +382,11 @@ export async function getProductBySlug(categorySlug: string, productSlug: string
         const globalConsultation = await getGlobalConsultation();
         const fileContent = fs.readFileSync(filePath, 'utf-8');
         const raw = JSON.parse(fileContent);
-        const product = normalizeProduct(raw, categorySlug, productSlug, globalConsultation);
+
+        // Try to get category color
+        const category = await getCategoryBySlug(categorySlug);
+
+        const product = normalizeProduct(raw, categorySlug, productSlug, globalConsultation, category?.color);
 
         return product;
     } catch (e) {

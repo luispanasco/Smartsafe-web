@@ -44,6 +44,7 @@ export interface CategoryBase {
     logo?: string; // Runtime normalized
     icon?: string; // Optional path to SVG
     image?: string; // Cover image
+    color?: string; // Category theme color
     carrousele?: string; // Folder path
     carrouselImages?: string[]; // Runtime populated (images in carrousele folder)
 
@@ -116,6 +117,7 @@ export interface ProductBase {
     slug: string; // Runtime
     categorySlug: string; // Runtime
     categoryTitle?: string; // Optional, populated for featured products
+    categoryColor?: string; // Optional, propagated from category
 
     title: string;
     shortDescription: string;

@@ -4,6 +4,7 @@
   "shortDescription": "Alineadoras profesionales, principalmente 3D, diseñadas para medición precisa y calibración de geometría vehicular en talleres modernos.",
   "order": 5,
   "logo": "/images/products/alineadoras/logo/logo.svg",
+  "color": "#c2410c",
   "isActive": true,
   "template": "advanced-equipment",
   "defaultSections": [

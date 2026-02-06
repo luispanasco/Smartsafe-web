@@ -14,7 +14,7 @@ export default async function CatalogoPage() {
                         Catálogo de Soluciones
                     </h1>
                     <p className="text-white/70 text-lg max-w-2xl mx-auto">
-                        Explore nuestra gama completa de equipamiento profesional Launch.
+                        Explore nuestra gama completa de equipamiento profesional Smartsafe.
                     </p>
                 </div>
 

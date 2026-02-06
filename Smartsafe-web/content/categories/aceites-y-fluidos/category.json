@@ -4,6 +4,7 @@
   "shortDescription": "Equipos profesionales para drenaje, recambio y mantenimiento de aceites y fluidos automotrices, diseñados para un servicio eficiente y seguro en talleres.",
   "order": 15,
   "logo": "/images/products/aceites-y-fluidos/logo/logo.svg",
+  "color": "#854d0e",
   "isActive": true,
   "template": "equipment",
   "defaultSections": [

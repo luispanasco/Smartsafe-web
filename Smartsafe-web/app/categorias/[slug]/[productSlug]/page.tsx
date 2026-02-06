@@ -57,8 +57,12 @@ export default async function ProductPage({ params }: PageProps) {
                     <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
                         <div className="order-2 lg:order-1">
                             {/* Badge */}
+                            {/* Badge */}
                             {product.badge && (
-                                <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-emphasis-badge-bg text-emphasis-badge-text text-xs md:text-sm font-bold mb-3 md:mb-6 shadow-lg shadow-black/20 max-w-full truncate">
+                                <span
+                                    className="inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-full text-white text-xs md:text-sm font-bold mb-3 md:mb-6 shadow-lg shadow-black/20 max-w-full truncate"
+                                    style={{ backgroundColor: product.categoryColor || '#156642' }}
+                                >
                                     {product.badge}
                                 </span>
                             )}

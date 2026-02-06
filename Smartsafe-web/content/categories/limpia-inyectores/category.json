@@ -4,6 +4,7 @@
   "shortDescription": "Máquinas profesionales para limpieza, prueba y diagnóstico de inyectores de combustible, diseñadas para mejorar el rendimiento y la eficiencia del motor.",
   "order": 8,
   "logo": "/images/products/limpia-inyectores/logo/logo.svg",
+  "color": "#7e22ce",
   "isActive": true,
   "template": "equipment",
   "defaultSections": [

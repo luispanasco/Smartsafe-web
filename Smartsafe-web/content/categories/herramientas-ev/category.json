@@ -4,6 +4,7 @@
   "shortDescription": "Herramientas y equipos especializados para diagnóstico, mantenimiento y trabajo seguro en vehículos eléctricos e híbridos.",
   "order": 2,
   "logo": "/images/products/herramientas-ev/logo/logo.svg",
+  "color": "#156642",
   "isActive": true,
   "template": "ev-equipment",
   "defaultSections": [

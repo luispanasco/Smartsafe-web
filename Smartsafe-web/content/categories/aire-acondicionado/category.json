@@ -4,6 +4,7 @@
   "shortDescription": "Máquinas profesionales para recuperación, reciclado y carga de sistemas de aire acondicionado automotriz.",
   "order": 6,
   "logo": "/images/products/aire-acondicionado/logo/logo.svg",
+  "color": "#0e7490",
   "isActive": true,
   "template": "equipment",
   "defaultSections": [

@@ -4,6 +4,7 @@
   "shortDescription": "Accesorios y complementos originales Smartsafe para ampliar, adaptar y potenciar el uso de scanners y equipos de diagnóstico.",
   "order": 14,
   "logo": "/images/products/accesorios/logo/logo.svg",
+  "color": "#334155",
   "isActive": true,
   "template": "accessory",
   "defaultSections": [
